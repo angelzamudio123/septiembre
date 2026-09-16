@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitos de la Revolución Mexicana</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .pagina {
+            width: 100%;
+            max-width: 801px;
+            height: 700px;
+            margin: auto;
+            position: relative;
+            background-color: white;
+        }
+
+        /* BANDERA */
+        .bandera {
+            position: absolute;
+            top: 35px;
+            left: 91px;
+            width: 639px;
+            height: 207px;
+            object-fit: cover;
+        }
+
+        /* TÍTULO */
+        .titulo {
+            position: absolute;
+            top: 245px;
+            left: 462px;
+            width: 227px;
+            height: 39px;
+
+            background-color: #d90000;
+            color: black;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 27px;
+            font-weight: bold;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* TEXTO IZQUIERDO */
+        .texto-izquierdo {
+            position: absolute;
+            top: 311px;
+            left: 85px;
+            width: 300px;
+
+            font-size: 25px;
+            line-height: 1.12;
+            color: #111;
+        }
+
+        /* TEXTO DERECHO */
+        .texto-derecho {
+            position: absolute;
+            top: 302px;
+            left: 416px;
+            width: 290px;
+
+            font-size: 25px;
+            line-height: 1.12;
+            color: #111;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        /* FRANJA ROJA INFERIOR */
+        .linea-roja {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 115px;
+            background-color: #d90000;
+        }
+
+        /* FOOTER DENTRO DE LA FRANJA */
+        footer {
+            position: absolute;
+            bottom: 12px;
+            left: 0;
+            width: 100%;
+
+            text-align: center;
+            color: black;
+
+            font-size: 17px;
+            line-height: 23px;
+            z-index: 2;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="pagina">
+
+        <!-- Imagen guardada en tu carpeta -->
+        <img
+            src="bandera2.PNG"
+            alt="Bandera de México"
+            class="bandera"
+        >
+
+        <!-- Título -->
+        <div class="titulo">
+            MITOS
+        </div>
+
+        <!-- Texto izquierdo -->
+        <div class="texto-izquierdo">
+            <p>
+                Todos los revolucionarios eran campesinos.
+                Realidad: Participaron personas de
+                diferentes grupos sociales, como
+                campesinos, obreros, políticos, militares,
+                intelectuales y personas de las ciudades.
+            </p>
+        </div>
+
+        <!-- Texto derecho -->
+        <div class="texto-derecho">
+            <p>
+                Todos los revolucionarios luchaban por lo
+                mismo.
+                <br>
+                Realidad: Cada grupo tenía diferentes
+                objetivos. Por ejemplo, Zapata defendía
+                principalmente la reforma agraria, mientras
+                que otros buscaban cambios políticos o
+                constitucionales.
+            </p>
+        </div>
+
+        <!-- FRANJA ROJA -->
+        <div class="linea-roja"></div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>ANGEL EDUARDO ZAMUDIO VEGA</p>
+            <p>5-I</p>
+            <p>24308051280679</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea del Tiempo Septiembre</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+        }
+
+        body {
+            background-color: #FF0000; /* Fondo rojizo / terracota */
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* Título */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #000;
+            margin-bottom: 5px;
+            font-family: 'Georgia', serif;
+        }
+
+        .divider {
+            width: 65%;
+            height: 2px;
+            background-color: #000;
+            margin-bottom: 60px;
+        }
+
+        /* Contenedor de la línea del tiempo */
+        .timeline-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        /* Flecha blanca central */
+        .arrow-body {
+            background-color: #FFFFFF;
+            height: 80px;
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .arrow-head {
+            width: 0;
+            height: 0;
+            border-top: 75px solid transparent;
+            border-bottom: 75px solid transparent;
+            border-left: 75px solid #FFFFFF;
+        }
+
+        /* Nodos/Fechas */
+        .node {
+            position: relative;
+            text-align: center;
+            font-size: 0.82rem;
+            font-weight: bold;
+            color: #000;
+            font-family: sans-serif;
+            width: 12%;
+            line-height: 1.2;
+        }
+
+        /* Textos e indicadores de posición */
+        .description {
+            position: absolute;
+            width: 140px;
+            font-size: 0.75rem;
+            color: #000;
+            font-family: sans-serif;
+            line-height: 1.25;
+            text-align: center;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Flecha apuntando hacia arriba (para eventos de arriba) */
+        .node.top .description {
+            bottom: 70px;
+        }
+
+        .node.top::before {
+            content: "↑";
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Flecha apuntando hacia abajo (para eventos de abajo) */
+        .node.bottom .description {
+            top: 70px;
+        }
+
+        .node.bottom::after {
+            content: "↓";
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Bandera de México */
+        .flag-container {
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            width: 90px;
+            height: 55px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 3px solid #FFF;
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+            background: white;
+        }
+
+        .flag-green {
+            background-color: #006847;
+            width: 33.33%;
+            height: 100%;
+        }
+
+        .flag-white {
+            background-color: #FFFFFF;
+            width: 33.33%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flag-red {
+            background-color: #CE1126;
+            width: 33.33%;
+            height: 100%;
+        }
+
+        .coat-of-arms {
+            width: 18px;
+            height: 18px;
+            background-color: #8B5A2B;
+            border-radius: 50%;
+        }
+
+        /* Responsividad básica para pantallas pequeñas */
+        @media (max-width: 900px) {
+            .description {
+                font-size: 0.65rem;
+                width: 100px;
+            }
+            .node {
+                font-size: 0.7rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>LINEA DEL TIEMPO SEPTIEMBRE</h1>
+        <div class="divider"></div>
+
+        <div class="timeline-wrapper">
+            <!-- Cuerpo de la Flecha -->
+            <div class="arrow-body">
+                
+                <!-- 16 de Septiembre de 1810 -->
+                <div class="node bottom">
+                    16 de septiembre de 1810
+                    <div class="description">
+                        Miguel Hidalgo y Costilla inicia el movimiento de Independencia con el Grito de Dolores, llamando al pueblo a levantarse contra el gobierno virreinal.
+                    </div>
+                </div>
+
+                <!-- 28 de Septiembre de 1810 -->
+                <div class="node top">
+                    28 de septiembre de 1810
+                    <div class="description">
+                        Los insurgentes toman la Alhóndiga de Granaditas en Guanajuato, obteniendo una importante victoria para el movimiento.
+                    </div>
+                </div>
+
+                <!-- 14 de Septiembre de 1813 -->
+                <div class="node bottom">
+                    14 de septiembre de 1813
+                    <div class="description">
+                        Morelos presenta los Sentimientos de la Nación ante el Congreso de Chilpancingo. El documento propone la independencia de México y establece ideas sobre la organización del nuevo país.
+                    </div>
+                </div>
+
+                <!-- 22 de Octubre de 1814 -->
+                <div class="node top">
+                    22 de octubre de 1814
+                    <div class="description">
+                        Se promulga la Constitución de Apatzingán, inspirada en gran parte en las ideas del movimiento insurgente.
+                    </div>
+                </div>
+
+                <!-- 24 de Febrero de 1821 -->
+                <div class="node bottom">
+                    24 de febrero de 1821
+                    <div class="description">
+                        Agustín de Iturbide proclama el Plan de Iguala, basado en tres principios: Religión, Independencia y Unión. Se forma el Ejército de las Tres Garantías o Ejército Trigarante.
+                    </div>
+                </div>
+
+                <!-- 24 de Agosto de 1821 -->
+                <div class="node top">
+                    24 de agosto de 1821
+                    <div class="description">
+                        Se firman los Tratados de Córdoba, que reconocen el acuerdo para establecer la independencia de México.
+                    </div>
+                </div>
+
+                <!-- 27 de Septiembre de 1821 -->
+                <div class="node bottom">
+                    27 de septiembre de 1821
+                    <div class="description">
+                        El Ejército Trigarante entra a la Ciudad de México, marcando la consumación de la Independencia de México después de 11 años de lucha.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Cabeza de la Flecha -->
+            <div class="arrow-head"></div>
+
+            <!-- Icono Bandera de México -->
+            <div class="flag-container">
+                <div class="flag-green"></div>
+                <div class="flag-white">
+                    <div class="coat-of-arms" title="Escudo Nacional"></div>
+                </div>
+                <div class="flag-red"></div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

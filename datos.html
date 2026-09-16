@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Curiosos</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .pagina {
+            width: 100%;
+            min-height: 450px;
+            display: flex;
+        }
+
+        /* Franja roja de la izquierda */
+        .franja-roja {
+            width: 85px;
+            background-color: #d90000;
+            flex-shrink: 0;
+        }
+
+        /* Contenido principal */
+        .contenido {
+            flex: 1;
+            display: flex;
+            padding: 0;
+        }
+
+        /* Columna de texto */
+        .texto {
+            width: 45%;
+            padding: 5px 28px;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 28px;
+            margin: 0 0 27px 0;
+            color: #111;
+        }
+
+        .parrafo {
+            font-size: 35px;
+            line-height: 1.18;
+            margin-bottom: 32px;
+            color: #111;
+        }
+
+        /* Columna de imágenes */
+        .imagenes {
+            width: 30%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 200px 200px 180px;
+            gap: 0;
+        }
+
+        .imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Imagen grande de arriba a la izquierda */
+        .imagen-principal {
+            grid-column: 1;
+            grid-row: 1 / 3;
+            object-fit: contain;
+        }
+
+        /* Imagen pequeña de arriba a la derecha */
+        .imagen-pequena {
+            grid-column: 2;
+            grid-row: 1;
+            object-fit: contain;
+        }
+
+        /* Imagen "Septiembre" */
+        .imagen-septiembre {
+            grid-column: 2;
+            grid-row: 2;
+            object-fit: cover;
+        }
+
+        /* Bandera */
+        .bandera {
+            grid-column: 1 / 3;
+            grid-row: 3;
+            object-fit: cover;
+        }
+
+        /* Adaptación para pantallas pequeñas */
+        @media (max-width: 700px) {
+
+            .pagina {
+                flex-direction: column;
+            }
+
+            .franja-roja {
+                width: 200%;
+                height: 100px;
+            }
+
+            .contenido {
+                flex-direction: column;
+            }
+
+            .texto {
+                width: 200%;
+                padding: 20px;
+            }
+
+            .imagenes {
+                width: 200%;
+                min-height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="pagina">
+
+        <!-- Franja roja -->
+        <div class="franja-roja"></div>
+
+        <div class="contenido">
+
+            <!-- TEXTO -->
+            <section class="texto">
+
+                <h1>DATOS CURIOSOS</h1>
+
+                <p class="parrafo">
+                    El 20 de noviembre es la fecha oficial con
+                    la que se reconoce el inicio de la
+                    Revolución Mexicana, pero el movimiento
+                    comenzó a organizarse desde meses
+                    antes, especialmente durante 1910.
+                </p>
+
+                <p class="parrafo">
+                    Francisco I. Madero escribió el Plan de San
+                    Luis, en el que llamó al pueblo mexicano a
+                    levantarse contra el gobierno de Porfirio
+                    Díaz. El documento fue fechado el 5 de
+                    octubre de 1910, aunque fue preparado y
+                    difundido desde el extranjero.
+                </p>
+
+                <p class="parrafo">
+                    La Revolución Mexicana no fue una sola
+                    lucha con un único grupo: participaron
+                    diferentes personajes y movimientos que
+                    tenían ideas y objetivos distintos, como
+                    Madero, Zapata, Villa y Carranza.
+                </p>
+
+            </section>
+
+            <!-- IMÁGENES -->
+            <section class="imagenes">
+
+                <img
+                    src="libertad.png"
+                    alt="Libertad 15 de septiembre"
+                    class="imagen imagen-principal"
+                >
+
+                <img
+                    src="personaje.png"
+                    alt="Personaje mexicano"
+                    class="imagen imagen-pequena"
+                >
+
+                <img
+                    src="sep.png"
+                    alt="Septiembre mes patrio"
+                    class="imagen imagen-septiembre"
+                >
+
+                <img
+                    src="bandera.png"
+                    alt="Bandera de México"
+                    class="imagen bandera"
+                >
+
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>

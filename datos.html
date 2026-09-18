@@ -1,173 +1,202 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Define la codificación de caracteres para mostrar acentos y ñ -->
     <meta charset="UTF-8">
+
+    <!-- Permite que la página se adapte a celulares y computadoras -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
     <title>Datos Curiosos</title>
 
     <style>
+
+        /* Configuración general de todos los elementos */
         * {
-            box-sizing: border-box;
+            box-sizing: border-box; /* Incluye bordes y relleno en el tamaño */
+            margin: 0; /* Elimina los márgenes predeterminados */
+            padding: 0; /* Elimina los rellenos predeterminados */
         }
 
+        /* Diseño general de la página */
         body {
-            body {
-                background-color: #000;
-                display: flex;
-                flex-direction: column;
-                min-height: 100vh;
-                padding: 20px;
-}
+            background-color: #000; /* Establece el fondo negro */
+            display: flex; /* Activa el sistema flexible */
+            flex-direction: column; /* Acomoda los elementos verticalmente */
+            min-height: 100vh; /* Hace que ocupe toda la altura de la pantalla */
+            padding: 20px; /* Agrega espacio alrededor del contenido */
         }
 
+        /* Contenedor principal de la página */
         .pagina {
-            width: 100%;
-            min-height: 450px;
-            display: flex;
+            width: 100%; /* Ocupa todo el ancho disponible */
+            min-height: 450px; /* Establece una altura mínima */
+            display: flex; /* Coloca la franja y el contenido en horizontal */
+            flex: 1; /* Permite que ocupe el espacio disponible */
         }
 
-        /* Franja roja de la izquierda */
+        /* Franja roja que aparece a la izquierda */
         .franja-roja {
-            width: 85px;
-            background-color: #d90000;
-            flex-shrink: 0;
+            width: 85px; /* Define el ancho de la franja */
+            background-color: #d90000; /* Establece el color rojo */
+            flex-shrink: 0; /* Evita que la franja se haga más pequeña */
         }
 
-        /* Contenido principal */
+        /* Contenedor del texto y las imágenes */
         .contenido {
-            flex: 1;
-            display: flex;
-            padding: 0;
+            flex: 1; /* Ocupa el espacio restante */
+            display: flex; /* Coloca texto e imágenes horizontalmente */
+            padding: 0; /* Elimina el relleno interior */
         }
 
-        /* Columna de texto */
+        /* Columna donde se encuentran los textos */
         .texto {
-            width: 45%;
-            padding: 5px 28px;
+            width: 45%; /* Ocupa el 45% del ancho del contenido */
+            padding: 5px 28px; /* Agrega espacio alrededor del texto */
         }
 
+        /* Estilo del título principal */
         h1 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 28px;
-            margin: 0 0 27px 0;
-            color: #111;
+            font-family: Georgia, "Times New Roman", serif; /* Tipo de letra */
+            font-size: 28px; /* Tamaño del título */
+            margin: 0 0 27px 0; /* Deja espacio debajo del título */
+            color: #fff; /* Establece el color blanco */
         }
 
+        /* Estilo de los párrafos */
         .parrafo {
-            font-size: 35px;
-            line-height: 1.18;
-            margin-bottom: 32px;
-            color: #111;
+            font-size: 35px; /* Define el tamaño de la letra */
+            line-height: 1.18; /* Ajusta la separación entre renglones */
+            margin-bottom: 32px; /* Separa los párrafos */
+            color: #fff; /* Establece el color blanco */
         }
 
-        /* Columna de imágenes */
+        /* Columna que contiene las imágenes */
         .imagenes {
-            width: 30%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 200px 200px 180px;
-            gap: 0;
+            width: 55%; /* Ocupa el 55% restante del contenido */
+            display: grid; /* Activa el sistema de cuadrícula */
+            grid-template-columns: 1fr 1fr; /* Crea dos columnas iguales */
+            grid-template-rows: 200px 200px 180px; /* Define tres filas */
+            gap: 0; /* Elimina el espacio entre imágenes */
         }
 
+        /* Configuración general de las imágenes */
         .imagen {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            width: 100%; /* Ocupa todo el ancho de su espacio */
+            height: 100%; /* Ocupa toda la altura de su espacio */
+            object-fit: cover; /* Ajusta la imagen sin deformarla */
+            display: block; /* Elimina espacios sobrantes debajo */
         }
 
-        /* Imagen grande de arriba a la izquierda */
+        /* Imagen grande ubicada a la izquierda */
         .imagen-principal {
-            grid-column: 1;
-            grid-row: 1 / 3;
-            object-fit: contain;
+            grid-column: 1; /* Coloca la imagen en la primera columna */
+            grid-row: 1 / 3; /* Ocupa las primeras dos filas */
+            object-fit: contain; /* Muestra la imagen completa */
         }
 
-        /* Imagen pequeña de arriba a la derecha */
+        /* Imagen pequeña ubicada arriba a la derecha */
         .imagen-pequena {
-            grid-column: 2;
-            grid-row: 1;
-            object-fit: contain;
+            grid-column: 2; /* Coloca la imagen en la segunda columna */
+            grid-row: 1; /* La coloca en la primera fila */
+            object-fit: contain; /* Evita recortar la imagen */
         }
 
-        /* Imagen "Septiembre" */
+        /* Imagen de septiembre */
         .imagen-septiembre {
-            grid-column: 2;
-            grid-row: 2;
-            object-fit: cover;
+            grid-column: 2; /* Coloca la imagen en la segunda columna */
+            grid-row: 2; /* La coloca en la segunda fila */
+            object-fit: cover; /* Rellena el espacio de la imagen */
         }
 
-        /* Bandera */
+        /* Bandera ubicada en la parte inferior */
         .bandera {
-            grid-column: 1 / 3;
-            grid-row: 3;
-            object-fit: cover;
+            grid-column: 1 / 3; /* Ocupa las dos columnas */
+            grid-row: 3; /* La coloca en la tercera fila */
+            object-fit: cover; /* Ajusta la imagen al espacio */
         }
 
-        /* Adaptación para pantallas pequeñas */
+        /* Adaptación del diseño para pantallas pequeñas */
         @media (max-width: 700px) {
 
+            /* Coloca la franja y el contenido verticalmente */
             .pagina {
-                flex-direction: column;
+                flex-direction: column; /* Cambia la dirección a vertical */
             }
 
+            /* Ajusta la franja roja para celulares */
             .franja-roja {
-                width: 200%;
-                height: 100px;
+                width: 100%; /* Ocupa todo el ancho */
+                height: 50px; /* Define su altura */
             }
 
+            /* Acomoda texto e imágenes en vertical */
             .contenido {
-                flex-direction: column;
+                flex-direction: column; /* Coloca las secciones una debajo de otra */
             }
 
+            /* Ajusta el ancho y espacio del texto */
             .texto {
-                width: 200%;
-                padding: 20px;
+                width: 100%; /* Ocupa todo el ancho */
+                padding: 20px; /* Agrega espacio interior */
             }
 
+            /* Ajusta la cuadrícula de imágenes */
             .imagenes {
-                width: 200%;
-                min-height: 500px;
+                width: 100%; /* Ocupa todo el ancho */
+                min-height: 500px; /* Establece una altura mínima */
             }
-            .container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    position: relative;
-    flex: 1;
-}
 
-footer {
-    position: fixed;
-    bottom: 15px;
-    left: 100;
-    width: 100%;
-    text-align: center;
-    color: #000;
-    font-family: 'Times New Roman', serif;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.4;
-}
+            /* Reduce el tamaño del texto en celulares */
+            .parrafo {
+                font-size: 24px; /* Hace los párrafos más pequeños */
+            }
+
+            /* Reduce el tamaño del título */
+            h1 {
+                font-size: 24px; /* Ajusta el título a la pantalla */
+            }
         }
+
+        /* Estilo del pie de página */
+        footer {
+            position: fixed; /* Mantiene el footer fijo en la ventana */
+            bottom: 15px; /* Lo coloca cerca del borde inferior */
+            left: 0; /* Lo alinea con el borde izquierdo */
+            width: 100%; /* Ocupa todo el ancho de la ventana */
+            text-align: center; /* Centra el texto horizontalmente */
+            color: #fff; /* Establece el color blanco */
+            font-family: 'Times New Roman', serif; /* Tipo de letra */
+            font-size: 18px; /* Tamaño del texto */
+            font-weight: bold; /* Coloca el texto en negritas */
+            line-height: 1.4; /* Separa los renglones */
+            background-color: #000; /* Fondo negro para el footer */
+            padding: 10px; /* Agrega espacio interior */
+        }
+
     </style>
 </head>
 
 <body>
 
+    <!-- Contenedor principal de toda la página -->
     <div class="pagina">
 
-        <!-- Franja roja -->
+        <!-- Franja roja decorativa del lado izquierdo -->
         <div class="franja-roja"></div>
 
+        <!-- Contenedor del texto y las imágenes -->
         <div class="contenido">
 
-            <!-- TEXTO -->
+            <!-- Sección donde se encuentra la información escrita -->
             <section class="texto">
 
+                <!-- Título de la sección -->
                 <h1>DATOS CURIOSOS</h1>
 
+                <!-- Primer dato curioso -->
                 <p class="parrafo">
                     El 20 de noviembre es la fecha oficial con
                     la que se reconoce el inicio de la
@@ -176,6 +205,7 @@ footer {
                     antes, especialmente durante 1910.
                 </p>
 
+                <!-- Segundo dato curioso -->
                 <p class="parrafo">
                     Francisco I. Madero escribió el Plan de San
                     Luis, en el que llamó al pueblo mexicano a
@@ -185,6 +215,7 @@ footer {
                     difundido desde el extranjero.
                 </p>
 
+                <!-- Tercer dato curioso -->
                 <p class="parrafo">
                     La Revolución Mexicana no fue una sola
                     lucha con un único grupo: participaron
@@ -194,28 +225,33 @@ footer {
                 </p>
 
             </section>
+            <!-- Fin de la sección de texto -->
 
-            <!-- IMÁGENES -->
+            <!-- Sección que contiene las imágenes -->
             <section class="imagenes">
 
+                <!-- Imagen principal de la libertad -->
                 <img
                     src="libertad.png"
                     alt="Libertad 15 de septiembre"
                     class="imagen imagen-principal"
                 >
 
+                <!-- Imagen pequeña de un personaje mexicano -->
                 <img
                     src="personaje.png"
                     alt="Personaje mexicano"
                     class="imagen imagen-pequena"
                 >
 
+                <!-- Imagen relacionada con septiembre -->
                 <img
                     src="sep.png"
                     alt="Septiembre mes patrio"
                     class="imagen imagen-septiembre"
                 >
 
+                <!-- Imagen de la bandera mexicana -->
                 <img
                     src="bandera.png"
                     alt="Bandera de México"
@@ -223,18 +259,28 @@ footer {
                 >
 
             </section>
+            <!-- Fin de la sección de imágenes -->
 
         </div>
+        <!-- Fin del contenedor de texto e imágenes -->
+
     </div>
-        </div> <!-- Fin de container -->
+    <!-- Fin del contenedor principal -->
 
+    <!-- Pie de página centrado en la parte inferior -->
     <footer>
-        <p>ANGEL EDUARDO ZAMUDIO VEGA</p>
-        <p>5-I</p>
-        <p>24308051280679</p>
-    </footer>
 
-</body>
-</html>
+        <!-- Nombre del alumno -->
+        <p>ANGEL EDUARDO ZAMUDIO VEGA</p>
+
+        <!-- Grupo -->
+        <p>5-I</p>
+
+        <!-- Matrícula -->
+        <p>24308051280679</p>
+
+    </footer>
+    <!-- Fin del pie de página -->
+
 </body>
 </html>

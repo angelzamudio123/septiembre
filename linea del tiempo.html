@@ -1,315 +1,351 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Permite que la página se adapte a celulares y computadoras -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
     <title>Línea del Tiempo Septiembre</title>
+
     <style>
+        /* Configuración general de todos los elementos */
         * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Times New Roman', Times, serif, sans-serif;
+            box-sizing: border-box; /* Incluye el borde y el relleno en el tamaño */
+            margin: 0; /* Elimina los márgenes predeterminados */
+            padding: 0; /* Elimina los rellenos predeterminados */
+            font-family: 'Times New Roman', Times, serif, sans-serif; /* Tipo de letra */
         }
 
+        /* Configuración del fondo y distribución de la página */
         body {
-            background-color: #FF0000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            padding: 20px;
+            background-color: #FF0000; /* Establece el fondo rojo */
+            display: flex; /* Activa el sistema flexible */
+            flex-direction: column; /* Acomoda los elementos verticalmente */
+            min-height: 100vh; /* Hace que ocupe como mínimo toda la pantalla */
+            padding: 20px; /* Agrega espacio alrededor del contenido */
         }
 
+        /* Contenedor principal de la línea del tiempo */
         .container {
-            width: 100%;
-            max-width: 1100px;
-            padding: 40px 20px;
-            position: relative;
+            width: 100%; /* Ocupa todo el ancho disponible */
+            max-width: 1100px; /* Evita que crezca demasiado */
+            margin: 0 auto; /* Centra el contenedor horizontalmente */
+            padding: 40px 20px; /* Agrega espacio interior */
+            position: relative; /* Permite posicionar elementos dentro */
+            flex: 1; /* Ocupa el espacio disponible antes del footer */
         }
 
-        /* Título */
+        /* Estilo del título principal */
         h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: #000;
-            margin-bottom: 5px;
-            font-family: 'Georgia', serif;
+            font-size: 2.5rem; /* Define el tamaño del título */
+            font-weight: bold; /* Coloca el texto en negritas */
+            letter-spacing: 2px; /* Separa las letras */
+            color: #000; /* Establece el color negro */
+            margin-bottom: 5px; /* Separa el título de la línea */
+            font-family: 'Georgia', serif; /* Cambia el tipo de letra */
         }
 
+        /* Línea negra que aparece debajo del título */
         .divider {
-            width: 65%;
-            height: 2px;
-            background-color: #000;
-            margin-bottom: 60px;
+            width: 65%; /* Define el ancho de la línea */
+            height: 2px; /* Define el grosor */
+            background-color: #000; /* Establece el color negro */
+            margin-bottom: 60px; /* Deja espacio debajo */
         }
 
-        /* Contenedor de la línea del tiempo */
+        /* Contenedor que organiza los elementos de la línea del tiempo */
         .timeline-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-            margin-top: 100px;
-            margin-bottom: 100px;
+            position: relative; /* Permite colocar la bandera respecto a este contenedor */
+            display: flex; /* Acomoda los elementos en horizontal */
+            align-items: center; /* Centra verticalmente los elementos */
+            margin-top: 100px; /* Agrega espacio arriba */
+            margin-bottom: 100px; /* Agrega espacio abajo */
         }
 
-        /* Flecha blanca central */
+        /* Cuerpo blanco de la flecha principal */
         .arrow-body {
-            background-color: #FFFFFF;
-            height: 80px;
-            flex-grow: 1;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: #FFFFFF; /* Establece el color blanco */
+            height: 80px; /* Define la altura de la flecha */
+            flex-grow: 1; /* Ocupa el espacio horizontal disponible */
+            display: flex; /* Organiza las fechas en horizontal */
+            justify-content: space-around; /* Distribuye las fechas */
+            align-items: center; /* Centra las fechas verticalmente */
+            position: relative; /* Permite posicionar elementos internos */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Agrega una sombra */
         }
 
+        /* Punta triangular de la flecha */
         .arrow-head {
-            width: 0;
-            height: 0;
-            border-top: 75px solid transparent;
-            border-bottom: 75px solid transparent;
-            border-left: 75px solid #FFFFFF;
+            width: 0; /* No necesita ancho porque se forma con bordes */
+            height: 0; /* No necesita altura porque se forma con bordes */
+            border-top: 75px solid transparent; /* Forma el borde superior invisible */
+            border-bottom: 75px solid transparent; /* Forma el borde inferior invisible */
+            border-left: 75px solid #FFFFFF; /* Forma la punta blanca */
         }
 
-        /* Nodos/Fechas */
+        /* Estilo de cada fecha o nodo */
         .node {
-            position: relative;
-            text-align: center;
-            font-size: 0.82rem;
-            font-weight: bold;
-            color: #000;
-            font-family: sans-serif;
-            width: 12%;
-            line-height: 1.2;
+            position: relative; /* Permite colocar su descripción alrededor */
+            text-align: center; /* Centra el texto */
+            font-size: 0.82rem; /* Define el tamaño de las fechas */
+            font-weight: bold; /* Coloca las fechas en negritas */
+            color: #000; /* Establece el color negro */
+            font-family: sans-serif; /* Cambia el tipo de letra */
+            width: 12%; /* Define el espacio de cada fecha */
+            line-height: 1.2; /* Ajusta la separación entre renglones */
         }
 
-        /* Textos e indicadores de posición */
+        /* Estilo general de las descripciones de los acontecimientos */
         .description {
-            position: absolute;
-            width: 140px;
-            font-size: 0.75rem;
-            color: #000;
-            font-family: sans-serif;
-            line-height: 1.25;
-            text-align: center;
-            left: 50%;
-            transform: translateX(-50%);
+            position: absolute; /* Permite colocar el texto fuera de la flecha */
+            width: 140px; /* Define el ancho de las descripciones */
+            font-size: 0.75rem; /* Define el tamaño del texto */
+            color: #000; /* Establece el color negro */
+            font-family: sans-serif; /* Cambia el tipo de letra */
+            line-height: 1.25; /* Ajusta la separación entre renglones */
+            text-align: center; /* Centra el texto */
+            left: 50%; /* Coloca el texto a la mitad del nodo */
+            transform: translateX(-50%); /* Centra exactamente la descripción */
         }
 
-        /* Flecha apuntando hacia arriba (para eventos de arriba) */
+        /* Coloca las descripciones de los eventos superiores */
         .node.top .description {
-            bottom: 70px;
+            bottom: 70px; /* Sitúa la descripción arriba de la flecha */
         }
 
+        /* Agrega una flecha hacia arriba a los eventos superiores */
         .node.top::before {
-            content: "↑";
-            position: absolute;
-            top: -45px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #000;
+            content: "↑"; /* Inserta una flecha como contenido */
+            position: absolute; /* Permite posicionarla libremente */
+            top: -45px; /* Coloca la flecha arriba de la fecha */
+            left: 50%; /* La sitúa horizontalmente al centro */
+            transform: translateX(-50%); /* Centra la flecha */
+            font-size: 1.2rem; /* Define su tamaño */
+            font-weight: bold; /* Hace la flecha más gruesa */
+            color: #000; /* Establece el color negro */
         }
 
-        /* Flecha apuntando hacia abajo (para eventos de abajo) */
+        /* Coloca las descripciones de los eventos inferiores */
         .node.bottom .description {
-            top: 70px;
+            top: 70px; /* Sitúa la descripción debajo de la flecha */
         }
 
+        /* Agrega una flecha hacia abajo a los eventos inferiores */
         .node.bottom::after {
-            content: "↓";
-            position: absolute;
-            bottom: -45px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #000;
+            content: "↓"; /* Inserta una flecha hacia abajo */
+            position: absolute; /* Permite posicionarla libremente */
+            bottom: -45px; /* Coloca la flecha debajo de la fecha */
+            left: 50%; /* La sitúa horizontalmente al centro */
+            transform: translateX(-50%); /* Centra la flecha */
+            font-size: 1.2rem; /* Define su tamaño */
+            font-weight: bold; /* Hace la flecha más gruesa */
+            color: #000; /* Establece el color negro */
         }
 
-        /* Bandera de México */
+        /* Contenedor de la bandera mexicana */
         .flag-container {
-            position: absolute;
-            right: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            width: 90px;
-            height: 55px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 3px solid #FFF;
-            box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
-            background: white;
+            position: absolute; /* Permite colocar la bandera sobre la flecha */
+            right: -40px; /* Desplaza la bandera hacia la derecha */
+            top: 50%; /* La coloca a la mitad de la altura */
+            transform: translateY(-50%); /* Centra la bandera verticalmente */
+            display: flex; /* Acomoda las franjas horizontalmente */
+            width: 90px; /* Define el ancho de la bandera */
+            height: 55px; /* Define la altura de la bandera */
+            border-radius: 8px; /* Redondea las esquinas */
+            overflow: hidden; /* Evita que el contenido salga del borde */
+            border: 3px solid #FFF; /* Agrega un borde blanco */
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.3); /* Agrega una sombra */
+            background: white; /* Establece el fondo blanco */
         }
 
+        /* Franja verde de la bandera */
         .flag-green {
-            background-color: #006847;
-            width: 33.33%;
-            height: 100%;
+            background-color: #006847; /* Color verde */
+            width: 33.33%; /* Ocupa un tercio del ancho */
+            height: 100%; /* Ocupa toda la altura */
         }
 
+        /* Franja blanca de la bandera */
         .flag-white {
-            background-color: #FFFFFF;
-            width: 33.33%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: #FFFFFF; /* Color blanco */
+            width: 33.33%; /* Ocupa un tercio del ancho */
+            height: 100%; /* Ocupa toda la altura */
+            display: flex; /* Permite centrar el escudo */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
         }
 
+        /* Franja roja de la bandera */
         .flag-red {
-            background-color: #CE1126;
-            width: 33.33%;
-            height: 100%;
+            background-color: #CE1126; /* Color rojo */
+            width: 33.33%; /* Ocupa un tercio del ancho */
+            height: 100%; /* Ocupa toda la altura */
         }
 
+        /* Representación sencilla del escudo nacional */
         .coat-of-arms {
-            width: 18px;
-            height: 18px;
-            background-color: #8B5A2B;
-            border-radius: 50%;
+            width: 18px; /* Define el ancho del círculo */
+            height: 18px; /* Define la altura del círculo */
+            background-color: #8B5A2B; /* Establece el color café */
+            border-radius: 50%; /* Convierte el elemento en círculo */
         }
 
-        /* Responsividad básica para pantallas pequeñas */
+        /* Ajustes para pantallas pequeñas, como celulares */
         @media (max-width: 900px) {
             .description {
-                font-size: 0.65rem;
-                width: 100px;
+                font-size: 0.65rem; /* Reduce el texto de las descripciones */
+                width: 100px; /* Reduce su ancho */
             }
+
             .node {
-                font-size: 0.7rem;
+                font-size: 0.7rem; /* Reduce el tamaño de las fechas */
             }
+
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.8rem; /* Reduce el tamaño del título */
             }
         }
-            .container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    position: relative;
-    flex: 1;
-}
 
-footer {
-    position: fixed;
-    bottom: 15px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: #000;
-    font-family: 'Times New Roman', serif;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.4;
-}
-}
-                </div> <!-- Fin de timeline-wrapper -->
-
-       
-    </div> <!-- Fin de container -->
-
-</body>
-</html>
+        /* Estilo del pie de página */
+        footer {
+            position: fixed; /* Mantiene el footer fijo en la ventana */
+            bottom: 15px; /* Lo coloca cerca de la parte inferior */
+            left: 0; /* Lo extiende desde el borde izquierdo */
+            width: 100%; /* Ocupa todo el ancho de la página */
+            text-align: center; /* Centra el texto horizontalmente */
+            color: #000; /* Establece el color negro */
+            font-family: 'Times New Roman', serif; /* Tipo de letra */
+            font-size: 18px; /* Tamaño del texto */
+            font-weight: bold; /* Coloca el texto en negritas */
+            line-height: 1.4; /* Separa los renglones */
+        }
     </style>
 </head>
+
 <body>
-       </div> <!-- Fin de container -->
 
-    <footer>
-        <p>ANGEL EDUARDO ZAMUDIO VEGA</p>
-        <p>5-I</p>
-        <p>24308051280679</p>
-    </footer>
-
-</body>
-</html>
+    <!-- Contenedor principal de todo el contenido -->
     <div class="container">
+
+        <!-- Título de la línea del tiempo -->
         <h1>LINEA DEL TIEMPO SEPTIEMBRE</h1>
+
+        <!-- Línea decorativa debajo del título -->
         <div class="divider"></div>
 
+        <!-- Contenedor de la línea del tiempo -->
         <div class="timeline-wrapper">
-            <!-- Cuerpo de la Flecha -->
+
+            <!-- Cuerpo blanco de la flecha -->
             <div class="arrow-body">
-                
-                <!-- 16 de Septiembre de 1810 -->
+
+                <!-- Acontecimiento del 16 de septiembre de 1810 -->
                 <div class="node bottom">
                     16 de septiembre de 1810
+
+                    <!-- Descripción del acontecimiento -->
                     <div class="description">
                         Miguel Hidalgo y Costilla inicia el movimiento de Independencia con el Grito de Dolores, llamando al pueblo a levantarse contra el gobierno virreinal.
                     </div>
                 </div>
 
-                <!-- 28 de Septiembre de 1810 -->
+                <!-- Acontecimiento del 28 de septiembre de 1810 -->
                 <div class="node top">
                     28 de septiembre de 1810
+
+                    <!-- Descripción del acontecimiento -->
                     <div class="description">
                         Los insurgentes toman la Alhóndiga de Granaditas en Guanajuato, obteniendo una importante victoria para el movimiento.
                     </div>
                 </div>
 
-                <!-- 14 de Septiembre de 1813 -->
+                <!-- Acontecimiento del 14 de septiembre de 1813 -->
                 <div class="node bottom">
                     14 de septiembre de 1813
+
+                    <!-- Descripción del acontecimiento -->
                     <div class="description">
                         Morelos presenta los Sentimientos de la Nación ante el Congreso de Chilpancingo. El documento propone la independencia de México y establece ideas sobre la organización del nuevo país.
                     </div>
                 </div>
 
-                <!-- 22 de Octubre de 1814 -->
+                <!-- Acontecimiento del 22 de octubre de 1814 -->
                 <div class="node top">
                     22 de octubre de 1814
+
+                    <!-- Descripción del acontecimiento -->
                     <div class="description">
                         Se promulga la Constitución de Apatzingán, inspirada en gran parte en las ideas del movimiento insurgente.
                     </div>
                 </div>
 
-                <!-- 24 de Febrero de 1821 -->
+                <!-- Acontecimiento del 24 de febrero de 1821 -->
                 <div class="node bottom">
                     24 de febrero de 1821
+
+                    <!-- Descripción del acontecimiento -->
                     <div class="description">
                         Agustín de Iturbide proclama el Plan de Iguala, basado en tres principios: Religión, Independencia y Unión. Se forma el Ejército de las Tres Garantías o Ejército Trigarante.
                     </div>
                 </div>
 
-                <!-- 24 de Agosto de 1821 -->
+                <!-- Acontecimiento del 24 de agosto de 1821 -->
                 <div class="node top">
                     24 de agosto de 1821
+
+                    <!-- Descripción del acontecimiento -->
                     <div class="description">
                         Se firman los Tratados de Córdoba, que reconocen el acuerdo para establecer la independencia de México.
                     </div>
                 </div>
 
-                <!-- 27 de Septiembre de 1821 -->
+                <!-- Acontecimiento del 27 de septiembre de 1821 -->
                 <div class="node bottom">
                     27 de septiembre de 1821
+
+                    <!-- Descripción del acontecimiento -->
                     <div class="description">
                         El Ejército Trigarante entra a la Ciudad de México, marcando la consumación de la Independencia de México después de 11 años de lucha.
                     </div>
                 </div>
 
             </div>
+            <!-- Fin del cuerpo de la flecha -->
 
-            <!-- Cabeza de la Flecha -->
+            <!-- Punta triangular que completa la flecha -->
             <div class="arrow-head"></div>
 
-            <!-- Icono Bandera de México -->
+            <!-- Bandera de México -->
             <div class="flag-container">
+
+                <!-- Franja verde -->
                 <div class="flag-green"></div>
+
+                <!-- Franja blanca con el escudo -->
                 <div class="flag-white">
                     <div class="coat-of-arms" title="Escudo Nacional"></div>
                 </div>
+
+                <!-- Franja roja -->
                 <div class="flag-red"></div>
+
             </div>
-            
+            <!-- Fin de la bandera -->
+
         </div>
+        <!-- Fin de timeline-wrapper -->
+
     </div>
-     
+    <!-- Fin del contenedor principal -->
+
+    <!-- Pie de página fijo, centrado y abajo -->
+    <footer>
+        <p>ANGEL EDUARDO ZAMUDIO VEGA</p>
+        <p>5-I</p>
+        <p>24308051280679</p>
+    </footer>
 
 </body>
 </html>

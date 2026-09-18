@@ -13,11 +13,9 @@
         }
 
         body {
-            background-color: #FF0000; /* Fondo rojizo / terracota */
+            background-color: #FF0000;
             display: flex;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
+            flex-direction: column;
             min-height: 100vh;
             padding: 20px;
         }
@@ -189,16 +187,27 @@
                 font-size: 1.8rem;
             }
         }
-            footer {
-                width: 100%;
-                text-align: center;
-                margin-top: 125px;
-                padding-bottom: 100px;
-                font-family: 'Times New Roman', serif;
-                font-size: 18px;
-                font-weight: bold;
-                line-height: 1.5;
-                color: #000;
+            .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    flex: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-family: 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.4;
+}
 }
                 </div> <!-- Fin de timeline-wrapper -->
 
@@ -210,7 +219,16 @@
     </style>
 </head>
 <body>
+       </div> <!-- Fin de container -->
 
+    <footer>
+        <p>ANGEL EDUARDO ZAMUDIO VEGA</p>
+        <p>5-I</p>
+        <p>24308051280679</p>
+    </footer>
+
+</body>
+</html>
     <div class="container">
         <h1>LINEA DEL TIEMPO SEPTIEMBRE</h1>
         <div class="divider"></div>
@@ -291,12 +309,7 @@
             
         </div>
     </div>
-     <footer>
-            <p>ANGEL EDUARDO ZAMUDIO VEGA</p>
-            <p>5-I</p>
-            <p>24308051280679</p>
-        </footer>
-
+     
 
 </body>
 </html>

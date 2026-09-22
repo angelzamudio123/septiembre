@@ -1,150 +1,361 @@
+```html
 <!DOCTYPE html>
+<!-- Indica que el documento utiliza HTML5 -->
+
 <html lang="es">
+<!-- Inicio de la página HTML y se indica que el idioma es español -->
 
 <head>
     <meta charset="UTF-8">
+    <!-- Permite utilizar correctamente acentos, ñ y otros caracteres especiales -->
+
     <title>Personajes ilustres</title>
+    <!-- Título que aparece en la pestaña del navegador -->
 
     <style>
+        /* Aquí comienza el código CSS, que sirve para darle diseño a la página */
+
 
         body {
             margin: 0;
+            /* Elimina el margen que el navegador coloca automáticamente */
+
             font-family: Arial, sans-serif;
+            /* Establece Arial como tipo de letra principal */
+
             background-color: white;
+            /* Coloca el fondo de la página de color blanco */
         }
+
 
         .pagina {
             display: flex;
+            /* Coloca los elementos de esta sección uno junto al otro */
+
             min-height: 100vh;
+            /* Hace que la página tenga como mínimo el alto completo de la pantalla */
+
             border: 1px solid black;
+            /* Coloca un borde negro de 1 píxel */
+
             box-sizing: border-box;
+            /* Hace que el borde se incluya dentro del tamaño del elemento */
         }
+
 
         .contenido {
             width: 89%;
+            /* El contenido principal ocupa el 89% del ancho */
+
             padding: 10px;
+            /* Deja 10 píxeles de espacio interno */
+
             box-sizing: border-box;
+            /* El padding se incluye dentro del ancho total */
         }
+
 
         .verde {
             width: 11%;
+            /* La barra verde ocupa el 11% del ancho */
+
             background-color: #008040;
+            /* Establece el color verde de la barra */
         }
+
 
         h1 {
             text-align: center;
+            /* Centra el título horizontalmente */
+
             font-size: 20px;
+            /* Establece el tamaño del texto en 20 píxeles */
+
             font-weight: normal;
+            /* Hace que el título no aparezca en negritas */
+
             margin: 2px 0 15px 0;
+            /* Controla el espacio alrededor del título */
         }
 
-        /* BLOQUE DE IMAGENES */
+
+        /* BLOQUE DE IMÁGENES */
+
         .personajes {
             display: grid;
+            /* Convierte esta sección en una cuadrícula */
 
-            /* 4 imágenes por fila */
             grid-template-columns: repeat(4, 140px);
+            /* Crea 4 columnas de 140 píxeles cada una */
 
-            /* Espacio entre imágenes */
             gap: 35px;
+            /* Deja 35 píxeles de espacio entre las imágenes */
 
-            /* Centrar las 8 imágenes */
             justify-content: center;
+            /* Centra toda la cuadrícula horizontalmente */
 
             margin: auto;
+            /* Centra el bloque dentro de su espacio */
         }
+
 
         .personaje {
             text-align: center;
+            /* Centra el contenido de cada personaje */
         }
 
-        /* TODAS LAS IMAGENES MISMO TAMAÑO */
+
+        /* TODAS LAS IMÁGENES TIENEN EL MISMO TAMAÑO */
+
         .personaje img {
             width: 175px;
-            height: 250px;
+            /* Define el ancho de cada imagen */
 
-            /* Recorta la imagen para que todas tengan el mismo tamaño */
+            height: 250px;
+            /* Define el alto de cada imagen */
+
             object-fit: cover;
+            /* Recorta la imagen para que ocupe exactamente
+               el tamaño indicado sin deformarla */
 
             display: block;
+            /* Hace que la imagen se comporte como un bloque */
         }
+
 
         .nombre {
             font-family: "Times New Roman", serif;
+            /* Utiliza Times New Roman para los nombres */
+
             font-size: 10px;
+            /* Define el tamaño de los nombres */
+
             font-weight: bold;
+            /* Hace los nombres de los personajes en negritas */
+
             margin-top: 3px;
+            /* Deja 3 píxeles de separación entre imagen y nombre */
+
             white-space: nowrap;
+            /* Evita que los nombres se dividan en varias líneas */
         }
-            footer {
-                position: fixed; /* Mantiene el footer fijo en la ventana */
-                bottom: 15px; /* Lo coloca cerca de la parte inferior */
-                left: 0; /* Lo extiende desde el borde izquierdo */
-                width: 100%; /* Ocupa todo el ancho de la página */
-                text-align: center; /* Centra el texto horizontalmente */
-                color: #000; /* Establece el color negro */
-                font-family: 'Times New Roman', serif; /* Tipo de letra */
-                font-size: 18px; /* Tamaño del texto */
-                font-weight: bold; /* Coloca el texto en negritas */
-                line-height: 1.4; /* Separa los renglones */
+
+
+        footer {
+            position: fixed;
+            /* Mantiene el pie de página fijo aunque se desplace la página */
+
+            bottom: 15px;
+            /* Coloca el footer a 15 píxeles desde la parte inferior */
+
+            left: 0;
+            /* Hace que comience desde el extremo izquierdo */
+
+            width: 100%;
+            /* Hace que ocupe todo el ancho de la pantalla */
+
+            text-align: center;
+            /* Centra el texto horizontalmente */
+
+            color: #000;
+            /* Establece el color del texto en negro */
+
+            font-family: 'Times New Roman', serif;
+            /* Utiliza Times New Roman */
+
+            font-size: 18px;
+            /* Define el tamaño del texto del footer */
+
+            font-weight: bold;
+            /* Hace el texto del footer en negritas */
+
+            line-height: 1.4;
+            /* Controla la separación entre las líneas */
+
+        }
+        /* Aquí termina el diseño CSS del footer */
+
     </style>
+    <!-- Aquí termina el código CSS -->
+
 </head>
+<!-- Aquí termina la configuración de la página -->
+
 
 <body>
+<!-- Aquí comienza todo lo que será visible en la página -->
+
 
     <div class="pagina">
+    <!-- Contenedor principal de toda la página -->
+
 
         <div class="contenido">
+        <!-- Contenedor donde estarán el título y los personajes -->
+
 
             <h1>Personajes ilustres</h1>
+            <!-- Título principal de la página -->
+
 
             <div class="personajes">
+            <!-- Contenedor que organiza las imágenes en forma de cuadrícula -->
 
-                <!-- Miguel Hidalgo --> 
-                <div class="personaje"> 
-                    <img src="miguel hidalgo.png" alt="Miguel Hidalgo "> 
-                    <div class="nombre">MIGUEL HIDALGO </div> </div> 
-                <!-- José María Morelos --> 
-                <div class="personaje"> 
-                    <img src="morelos.png" alt="José María Morelos y Pavón"> 
-                    <div class="nombre">JOSE MARIA MORELOS Y PAVON</div> </div> 
-                <!-- Benito Juárez --> 
-                <div class="personaje"> 
-                    <img src="benito.png" alt="Benito Juárez"> 
-                    <div class="nombre">BENITO JUAREZ</div> </div> 
-                <!-- Josefa Ortiz --> 
-                <div class="personaje"> 
-                    <img src="josefa.png" alt="Josefa Ortiz de Domínguez"> 
-                    <div class="nombre">JOSEFA ORTIZ DE DOMINGUEZ</div> </div> 
-                <!-- Vicente Guerrero --> 
-                <div class="personaje"> 
-                    <img src="vicente.png" alt="Vicente Guerrero"> 
-                    <div class="nombre">VICENTE GUERRERO</div> </div> 
-                <!-- Agustín de Iturbide --> 
-                <div class="personaje"> 
-                    <img src="agustin.png" alt="Agustín de Iturbide"> 
-                    <div class="nombre">AGUSTIN DE ITURBIDE</div> </div> 
-                <!-- Emiliano Zapata --> 
-                <div class="personaje"> 
-                    <img src="emiliano.png" alt="Emiliano Zapata"> 
-                    <div class="nombre">EMILIANO ZAPATA</div> </div> 
-                <!-- Francisco I. Madero --> 
-                <div class="personaje"> 
-                    <img src="madero.png" alt="Francisco I. Madero"> 
-                    <div class="nombre">FRANCISCO I. MADERO</div> </div>
+
+                <!-- Miguel Hidalgo -->
+                <div class="personaje">
+                    <!-- Contenedor individual del personaje -->
+
+                    <img src="miguel hidalgo.png" alt="Miguel Hidalgo">
+                    <!-- Muestra la imagen de Miguel Hidalgo.
+                         src indica dónde está guardada la imagen.
+                         alt contiene una descripción de la imagen. -->
+
+                    <div class="nombre">MIGUEL HIDALGO</div>
+                    <!-- Nombre que aparece debajo de la imagen -->
+                </div>
+
+
+                <!-- José María Morelos -->
+                <div class="personaje">
+
+                    <img src="morelos.png"
+                         alt="José María Morelos y Pavón">
+                    <!-- Muestra la imagen de Morelos -->
+
+                    <div class="nombre">
+                        JOSE MARIA MORELOS Y PAVON
+                    </div>
+                    <!-- Nombre del personaje -->
+
+                </div>
+
+
+                <!-- Benito Juárez -->
+                <div class="personaje">
+
+                    <img src="benito.png"
+                         alt="Benito Juárez">
+                    <!-- Muestra la imagen de Benito Juárez -->
+
+                    <div class="nombre">
+                        BENITO JUAREZ
+                    </div>
+                    <!-- Nombre del personaje -->
+
+                </div>
+
+
+                <!-- Josefa Ortiz -->
+                <div class="personaje">
+
+                    <img src="josefa.png"
+                         alt="Josefa Ortiz de Domínguez">
+                    <!-- Muestra la imagen de Josefa Ortiz -->
+
+                    <div class="nombre">
+                        JOSEFA ORTIZ DE DOMINGUEZ
+                    </div>
+                    <!-- Nombre del personaje -->
+
+                </div>
+
+
+                <!-- Vicente Guerrero -->
+                <div class="personaje">
+
+                    <img src="vicente.png"
+                         alt="Vicente Guerrero">
+                    <!-- Muestra la imagen de Vicente Guerrero -->
+
+                    <div class="nombre">
+                        VICENTE GUERRERO
+                    </div>
+                    <!-- Nombre del personaje -->
+
+                </div>
+
+
+                <!-- Agustín de Iturbide -->
+                <div class="personaje">
+
+                    <img src="agustin.png"
+                         alt="Agustín de Iturbide">
+                    <!-- Muestra la imagen de Agustín de Iturbide -->
+
+                    <div class="nombre">
+                        AGUSTIN DE ITURBIDE
+                    </div>
+                    <!-- Nombre del personaje -->
+
+                </div>
+
+
+                <!-- Emiliano Zapata -->
+                <div class="personaje">
+
+                    <img src="emiliano.png"
+                         alt="Emiliano Zapata">
+                    <!-- Muestra la imagen de Emiliano Zapata -->
+
+                    <div class="nombre">
+                        EMILIANO ZAPATA
+                    </div>
+                    <!-- Nombre del personaje -->
+
+                </div>
+
+
+                <!-- Francisco I. Madero -->
+                <div class="personaje">
+
+                    <img src="madero.png"
+                         alt="Francisco I. Madero">
+                    <!-- Muestra la imagen de Francisco I. Madero -->
+
+                    <div class="nombre">
+                        FRANCISCO I. MADERO
+                    </div>
+                    <!-- Nombre del personaje -->
+
+                </div>
+
 
             </div>
+            <!-- Aquí termina la cuadrícula de personajes -->
+
 
         </div>
+        <!-- Aquí termina el contenido principal -->
+
 
         <div class="verde"></div>
+        <!-- Esta división crea la barra verde del lado derecho -->
+
 
     </div>
- <footer>
+    <!-- Aquí termina el contenedor principal -->
+
+
+    <footer>
+        <!-- Pie de página que contiene los datos del alumno -->
+
         <p>ANGEL EDUARDO ZAMUDIO VEGA</p>
+        <!-- Nombre del alumno -->
+
         <p>5-I</p>
+        <!-- Grupo o semestre -->
+
         <p>24308051280679</p>
+        <!-- Matrícula o número de identificación -->
+
     </footer>
+    <!-- Aquí termina el pie de página -->
+
+
 </body>
+<!-- Aquí termina todo el contenido visible -->
 
 </html>
+<!-- Aquí termina el documento HTML -->
+```

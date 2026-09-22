@@ -1,171 +1,396 @@
+```html
 <!DOCTYPE html>
+<!-- Indica que el documento utiliza HTML5 -->
+
 <html lang="es">
+<!-- Inicia el documento HTML y establece el idioma como español -->
+
 <head>
+    <!-- Aquí se coloca la información de configuración de la página -->
+
     <meta charset="UTF-8">
+    <!-- Permite utilizar correctamente acentos, ñ y otros caracteres especiales -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace que la página se adapte al ancho de la pantalla del dispositivo -->
+
     <title>Mitos de la Revolución Mexicana</title>
+    <!-- Es el título que aparece en la pestaña del navegador -->
+
 
     <style>
+        /* Aquí comienza el código CSS.
+           CSS se utiliza para controlar el diseño, colores,
+           tamaños y posiciones de los elementos. */
+
+
         * {
             box-sizing: border-box;
+            /* Hace que el padding y los bordes se incluyan
+               dentro del tamaño total de los elementos */
         }
+
 
         body {
             margin: 0;
+            /* Elimina el margen que el navegador coloca automáticamente */
+
             background-color: white;
+            /* Establece el fondo general de la página en blanco */
+
             font-family: Arial, Helvetica, sans-serif;
+            /* Define Arial como fuente principal.
+               Si no está disponible, utiliza Helvetica o sans-serif */
         }
+
+
+        /* CONTENEDOR PRINCIPAL */
 
         .pagina {
             width: 100%;
+            /* Hace que el contenedor pueda ocupar todo el ancho disponible */
+
             max-width: 801px;
+            /* Establece un ancho máximo de 801 píxeles */
+
             height: 700px;
+            /* Establece la altura de la página en 700 píxeles */
+
             margin: auto;
+            /* Centra el contenedor horizontalmente */
+
             position: relative;
+            /* Permite colocar los elementos internos
+               utilizando posiciones absolutas */
+
             background-color: white;
+            /* Establece el fondo del contenedor en blanco */
         }
+
 
         /* BANDERA */
+
         .bandera {
             position: absolute;
+            /* Permite colocar la imagen en una posición exacta */
+
             top: 35px;
+            /* Coloca la imagen a 35 píxeles desde la parte superior */
+
             left: 91px;
+            /* Coloca la imagen a 91 píxeles desde el lado izquierdo */
+
             width: 639px;
+            /* Define el ancho de la bandera */
+
             height: 207px;
+            /* Define la altura de la bandera */
+
             object-fit: cover;
+            /* Hace que la imagen ocupe todo el espacio indicado,
+               recortándola si es necesario */
         }
+
 
         /* TÍTULO */
+
         .titulo {
             position: absolute;
+            /* Permite colocar el título en una posición específica */
+
             top: 245px;
+            /* Coloca el título a 245 píxeles desde arriba */
+
             left: 462px;
+            /* Coloca el título a 462 píxeles desde la izquierda */
+
             width: 227px;
+            /* Define el ancho del cuadro del título */
+
             height: 39px;
+            /* Define la altura del cuadro del título */
 
             background-color: #d90000;
+            /* Coloca un fondo rojo al cuadro */
+
             color: black;
+            /* Hace que el texto sea negro */
 
             font-family: Georgia, "Times New Roman", serif;
+            /* Define la fuente del título */
+
             font-size: 27px;
+            /* Define el tamaño de la palabra MITOS */
+
             font-weight: bold;
+            /* Hace que el texto aparezca en negritas */
 
             display: flex;
+            /* Permite controlar fácilmente la posición del texto */
+
             align-items: center;
+            /* Centra el texto verticalmente */
+
             justify-content: center;
+            /* Centra el texto horizontalmente */
         }
+
 
         /* TEXTO IZQUIERDO */
+
         .texto-izquierdo {
             position: absolute;
+            /* Permite colocar el texto en una posición exacta */
+
             top: 311px;
+            /* Coloca el texto a 311 píxeles desde arriba */
+
             left: 85px;
+            /* Coloca el texto a 85 píxeles desde la izquierda */
+
             width: 300px;
+            /* Define el ancho disponible para el texto */
 
             font-size: 25px;
+            /* Define el tamaño de las letras */
+
             line-height: 1.12;
+            /* Controla el espacio vertical entre las líneas */
+
             color: #111;
+            /* Establece un color negro ligeramente más suave */
         }
+
 
         /* TEXTO DERECHO */
+
         .texto-derecho {
             position: absolute;
+            /* Permite colocar el texto en una posición específica */
+
             top: 302px;
+            /* Coloca el texto a 302 píxeles desde arriba */
+
             left: 416px;
+            /* Coloca el texto a 416 píxeles desde la izquierda */
+
             width: 290px;
+            /* Define el ancho del bloque de texto */
 
             font-size: 25px;
+            /* Define el tamaño de las letras */
+
             line-height: 1.12;
+            /* Define la separación entre las líneas */
+
             color: #111;
+            /* Define el color del texto */
         }
+
 
         p {
             margin: 0;
+            /* Elimina los márgenes predeterminados de los párrafos */
         }
+
 
         /* FRANJA ROJA INFERIOR */
+
         .linea-roja {
             position: absolute;
+            /* Permite colocar la franja en una posición específica */
+
             bottom: 0;
+            /* Coloca la franja pegada a la parte inferior */
+
             left: 0;
+            /* Hace que comience desde el extremo izquierdo */
+
             width: 100%;
+            /* Hace que la franja ocupe todo el ancho */
+
             height: 115px;
+            /* Define el alto de la franja roja */
+
             background-color: #d90000;
+            /* Establece el color rojo de la franja */
         }
+
 
         /* FOOTER DENTRO DE LA FRANJA */
+
         footer {
             position: absolute;
+            /* Permite colocar el footer en una posición exacta */
+
             bottom: 12px;
+            /* Coloca el footer a 12 píxeles del borde inferior */
+
             left: 0;
+            /* Hace que comience desde el lado izquierdo */
+
             width: 100%;
+            /* Hace que ocupe todo el ancho de la página */
 
             text-align: center;
+            /* Centra los datos horizontalmente */
+
             color: black;
+            /* Hace que el texto sea negro */
 
             font-size: 17px;
+            /* Define el tamaño de la letra */
+
             line-height: 23px;
+            /* Define la separación entre cada línea */
+
             z-index: 2;
+            /* Hace que el footer aparezca por encima de la franja roja */
         }
+
 
         footer p {
             margin: 0;
+            /* Elimina los espacios predeterminados de los párrafos del footer */
         }
+
+
     </style>
+    <!-- Aquí termina el código CSS -->
+
 </head>
+<!-- Aquí termina la sección HEAD -->
+
 
 <body>
+<!-- Aquí comienza todo lo que se muestra en la página -->
+
 
     <div class="pagina">
+    <!-- Contenedor principal de toda la página -->
 
-        <!-- Imagen guardada en tu carpeta -->
+
+        <!-- IMAGEN DE LA BANDERA -->
+
         <img
             src="bandera2.png"
             alt="Bandera de México"
             class="bandera"
         >
+        <!--
+            <img> sirve para mostrar una imagen.
 
-        <!-- Título -->
+            src="bandera2.png"
+            indica el nombre del archivo de imagen que está
+            guardado en la misma carpeta que el HTML.
+
+            alt="Bandera de México"
+            proporciona una descripción de la imagen.
+
+            class="bandera"
+            conecta esta imagen con el CSS .bandera,
+            donde se establece su tamaño y posición.
+        -->
+
+
+        <!-- TÍTULO -->
+
         <div class="titulo">
             MITOS
         </div>
+        <!--
+            Este div contiene el título "MITOS".
 
-        <!-- Texto izquierdo -->
+            class="titulo"
+            hace que se apliquen todos los estilos
+            definidos anteriormente para .titulo.
+        -->
+
+
+        <!-- TEXTO IZQUIERDO -->
+
         <div class="texto-izquierdo">
+        <!-- Contenedor que coloca el primer texto en el lado izquierdo -->
+
             <p>
                 Todos los revolucionarios eran campesinos.
+
                 Realidad: Participaron personas de
                 diferentes grupos sociales, como
                 campesinos, obreros, políticos, militares,
                 intelectuales y personas de las ciudades.
             </p>
+
+            <!--
+                <p> indica que se trata de un párrafo.
+
+                El texto se acomoda automáticamente dentro
+                del ancho establecido en .texto-izquierdo.
+            -->
+
         </div>
 
-        <!-- Texto derecho -->
+
+        <!-- TEXTO DERECHO -->
+
         <div class="texto-derecho">
+        <!-- Contenedor que coloca el segundo texto en el lado derecho -->
+
             <p>
                 Todos los revolucionarios luchaban por lo
                 mismo.
+
                 <br>
+                <!-- <br> fuerza un salto de línea -->
+
                 Realidad: Cada grupo tenía diferentes
                 objetivos. Por ejemplo, Zapata defendía
                 principalmente la reforma agraria, mientras
                 que otros buscaban cambios políticos o
                 constitucionales.
             </p>
+
         </div>
 
+
         <!-- FRANJA ROJA -->
+
         <div class="linea-roja"></div>
+        <!--
+            Esta división crea la franja roja ubicada
+            en la parte inferior de la página.
+
+            Su tamaño, posición y color están definidos
+            mediante .linea-roja en CSS.
+        -->
+
 
         <!-- FOOTER -->
+
         <footer>
+        <!-- Contiene la información del alumno -->
+
             <p>ANGEL EDUARDO ZAMUDIO VEGA</p>
+            <!-- Nombre del alumno -->
+
             <p>5-I</p>
+            <!-- Grupo o semestre -->
+
             <p>24308051280679</p>
+            <!-- Matrícula o número de identificación -->
+
         </footer>
+        <!-- Aquí termina el footer -->
+
 
     </div>
+    <!-- Aquí termina el contenedor principal .pagina -->
+
 
 </body>
+<!-- Aquí termina todo el contenido visible -->
+
 </html>
+<!-- Aquí termina el documento HTML -->
+```
+

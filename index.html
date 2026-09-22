@@ -1,163 +1,366 @@
 <!DOCTYPE html>
+<!-- Indica que el documento está escrito utilizando HTML5 -->
+
 <html>
+<!-- Aquí comienza el documento HTML -->
+
 <head>
+    <!-- Aquí se coloca información de configuración de la página -->
+
     <meta charset="UTF-8">
+    <!-- Permite utilizar caracteres especiales como á, é, í, ó, ú y ñ -->
+
     <title>Presentación de México</title>
+    <!-- Es el título que aparece en la pestaña del navegador -->
+
 
     <style>
+        /* Aquí comienza el código CSS.
+           CSS sirve para darle diseño, colores, tamaños y posiciones
+           a los elementos de la página. */
+
+
         * {
             box-sizing: border-box;
+            /* Hace que el padding y los bordes se incluyan
+               dentro del tamaño total de los elementos */
         }
+
 
         body {
             margin: 0;
+            /* Elimina el margen que el navegador agrega automáticamente */
+
             height: 100vh;
+            /* Hace que el body ocupe el 100% de la altura de la pantalla */
+
             background-color: #FF0000;
+            /* Coloca el fondo de la página en color rojo */
+
             font-family: Arial, sans-serif;
+            /* Establece Arial como fuente principal */
+
             border: 4px solid black;
+            /* Coloca un borde negro de 4 píxeles alrededor de la página */
+
             position: relative;
+            /* Permite posicionar otros elementos de forma absoluta
+               tomando al body como referencia */
+
             overflow: hidden;
+            /* Evita que aparezcan barras de desplazamiento */
         }
 
-        /* Título */
+
+        /* TÍTULO */
+
         .titulo {
             position: absolute;
+            /* Permite colocar el título en una posición exacta */
+
             top: 90px;
+            /* Coloca el título a 90 píxeles desde la parte superior */
+
             left: 50%;
+            /* Coloca el inicio del elemento en el 50% del ancho */
+
             transform: translateX(-50%);
+            /* Mueve el título hacia la izquierda la mitad de su propio ancho.
+               Esto permite centrarlo correctamente */
+
             text-align: center;
+            /* Centra el texto */
+
             color: black;
+            /* Establece el color del texto en negro */
+
             width: 800px;
+            /* El bloque del título tendrá 800 píxeles de ancho */
         }
+
 
         .titulo pequeño {
             font-size: 20px;
+            /* Define el tamaño del texto "PRESENTACIÓN DE" */
+
             letter-spacing: 2px;
+            /* Deja 2 píxeles de espacio entre las letras */
+
             font-weight: bold;
+            /* Hace el texto más grueso o negrita */
         }
+
 
         .titulo h1 {
             font-family: "Times New Roman", serif;
+            /* Utiliza Times New Roman para el título principal */
+
             font-size: 100px;
+            /* Hace que la palabra MÉXICO sea muy grande */
+
             margin: 0;
+            /* Elimina los márgenes predeterminados del h1 */
+
             line-height: 110px;
+            /* Define la altura de la línea del título */
         }
 
-        /* Botones en horizontal */
+
+        /* BOTONES EN HORIZONTAL */
+
         .menu {
             position: absolute;
+            /* Permite colocar el menú en una posición específica */
+
             top: 300px;
+            /* Coloca el menú a 300 píxeles desde arriba */
+
             left: 50%;
+            /* Coloca el menú tomando como referencia el centro de la página */
+
             transform: translateX(-50%);
+            /* Mueve el menú hacia la izquierda para centrarlo */
+
             display: flex;
+            /* Convierte el menú en un contenedor flexible */
+
             justify-content: center;
+            /* Centra los botones horizontalmente */
+
             gap: 15px;
+            /* Deja 15 píxeles de separación entre cada botón */
+
             width: auto;
+            /* El ancho se adapta al contenido */
         }
+
 
         .boton {
             width: 200px;
+            /* Cada botón mide 200 píxeles de ancho */
+
             height: 62px;
+            /* Cada botón mide 62 píxeles de alto */
+
             background-color: #008c45;
+            /* Establece el color verde de los botones */
+
             display: flex;
+            /* Permite controlar la posición del texto dentro del botón */
+
             align-items: center;
+            /* Centra el texto verticalmente */
+
             justify-content: center;
+            /* Centra el texto horizontalmente */
+
             text-align: center;
+            /* Centra el texto */
+
             padding: 7px;
+            /* Deja espacio interno alrededor del texto */
+
             font-size: 19px;
+            /* Define el tamaño del texto */
+
             color: black;
+            /* Hace que el texto sea negro */
+
             text-decoration: none;
+            /* Elimina el subrayado que normalmente tienen los enlaces */
         }
+
 
         .boton:hover {
             background-color: #007238;
+            /* Cambia el botón a un verde más oscuro
+               cuando el mouse pasa sobre él */
         }
 
+
         /* IMAGEN */
+
         .personaje {
             position: absolute;
+            /* Permite colocar la imagen en una posición específica */
+
             top: 390px;
+            /* Coloca la imagen a 390 píxeles desde arriba */
+
             left: 50%;
+            /* Coloca el elemento tomando como referencia el centro */
+
             transform: translateX(-50%);
+            /* Centra la imagen horizontalmente */
+
             text-align: center;
+            /* Centra cualquier texto que esté dentro */
         }
+
 
         .personaje img {
             width: 500px;
+            /* Define el ancho de la imagen */
+
             height: 300px;
+            /* Define el alto de la imagen */
+
             object-fit: contain;
+            /* Hace que la imagen conserve sus proporciones
+               y se adapte dentro del espacio disponible */
+
             display: block;
+            /* Hace que la imagen se comporte como un elemento de bloque */
         }
 
-        /* Datos del alumno */
+
+        /* DATOS DEL ALUMNO */
+
         .datos {
             position: absolute;
+            /* Permite colocar los datos en una posición específica */
+
             left: 1150px;
+            /* Coloca los datos a 1150 píxeles desde el lado izquierdo */
+
             bottom: 50px;
+            /* Coloca los datos a 50 píxeles desde la parte inferior */
+
             width: 800px;
+            /* Define el ancho disponible para los datos */
+
             font-size: 25px;
+            /* Define el tamaño de la letra */
+
             line-height: 30px;
+            /* Define la separación vertical entre líneas */
         }
+
 
         .datos p {
             margin: 0;
+            /* Elimina el espacio que normalmente tienen los párrafos */
         }
+
 
         .linea {
             width: 600px;
+            /* Define el ancho de la línea */
+
             height: 3px;
+            /* Define el grosor de la línea */
+
             background-color: black;
+            /* Hace que la línea sea negra */
+
             margin-top: 4px;
+            /* Deja 4 píxeles de espacio arriba de la línea */
         }
+
+
     </style>
+    <!-- Aquí termina el código CSS -->
+
 </head>
+<!-- Aquí termina la sección de configuración -->
+
 
 <body>
+<!-- Aquí comienza todo lo que se muestra visualmente en la página -->
+
 
     <!-- MENÚ -->
+    <!-- Esta sección contiene los botones de navegación -->
+
     <div class="menu">
+        <!-- Contenedor que agrupa todos los botones -->
+
 
         <a href="linea del tiempo.html" class="boton">
             Linea del<br>tiempo
         </a>
+        <!-- Primer botón.
+             href indica el archivo HTML que se abrirá al hacer clic.
+             <br> hace un salto de línea entre "Linea del" y "tiempo". -->
+
 
         <a href="personajes.html" class="boton">
             Personajes<br>ilustres
         </a>
+        <!-- Segundo botón que lleva a la página de personajes -->
+
 
         <a href="datos.html" class="boton">
             Datos<br>curiosos
         </a>
+        <!-- Tercer botón que lleva a la página de datos curiosos -->
+
 
         <a href="mitos.html" class="boton">
             Mitos
         </a>
+        <!-- Cuarto botón que lleva a la página de mitos -->
+
 
     </div>
+    <!-- Aquí termina el menú -->
+
 
     <!-- TÍTULO -->
+
     <div class="titulo">
+        <!-- Contenedor que agrupa el subtítulo y el título principal -->
+
         <pequeño>PRESENTACIÓN DE</pequeño>
+        <!-- Texto pequeño que aparece arriba de MÉXICO -->
+
         <h1>MÉXICO</h1>
+        <!-- Título principal de la página -->
+
     </div>
+    <!-- Aquí termina el título -->
+
 
     <!-- IMAGEN DE MIGUEL HIDALGO -->
+
     <div class="personaje">
+        <!-- Contenedor de la imagen -->
+
         <img src="elmiguel.PNG" alt="Miguel Hidalgo">
+        <!--
+        src = indica el nombre y ubicación de la imagen.
+        alt = proporciona una descripción de la imagen.
+        -->
+
     </div>
+    <!-- Aquí termina el contenedor de la imagen -->
+
 
     <!-- DATOS DEL ALUMNO -->
+
     <div class="datos">
+        <!-- Contenedor que posiciona los datos del alumno -->
 
        <footer>
+           <!-- Pie de página que contiene la información del alumno -->
+
             <p>ANGEL EDUARDO ZAMUDIO VEGA</p>
+            <!-- Nombre del alumno -->
+
             <p>5-I</p>
+            <!-- Grupo o semestre -->
+
             <p>24308051280679</p>
+            <!-- Matrícula o número de identificación -->
+
        </footer>
 
     </div>
+    <!-- Aquí termina la sección de datos -->
+
 
 </body>
+<!-- Aquí termina todo el contenido visible -->
+
 </html>
-
-
+<!-- Aquí termina el documento HTML -->
